@@ -5,8 +5,11 @@ namespace OCA\Piwik;
 use OCP\IConfig;
 
 class Config {
+	private string $appName;
+	private IConfig $config;
+
 	public function __construct($appName, IConfig $config) {
-		$this->appName = $appName;
+		$this->appName = (string)$appName;
 		$this->config = $config;
 	}
 

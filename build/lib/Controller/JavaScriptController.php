@@ -4,21 +4,24 @@ namespace OCA\Piwik\Controller;
 
 use OCA\Piwik\Config;
 use OCP\AppFramework\Controller;
+use OCP\AppFramework\Http\Attribute\NoAdminRequired;
+use OCP\AppFramework\Http\Attribute\NoCSRFRequired;
+use OCP\AppFramework\Http\Attribute\PublicPage;
 use OCP\AppFramework\Http\DataDownloadResponse;
 use OCP\AppFramework\Http\Response;
 use OCP\IConfig;
 use OCP\IRequest;
 
 class JavaScriptController extends Controller {
-	/** @var \OCP\IConfig */
-	protected $config;
+	/** @var Config */
+	protected Config $config;
 
 	/**
 	 * constructor of the controller
 	 *
 	 * @param string $appName
 	 * @param IRequest $request
-	 * @param IConfig $config
+	 * @param Config $config
 	 */
 	public function __construct($appName,
 		IRequest $request,
@@ -34,6 +37,9 @@ class JavaScriptController extends Controller {
 	 *
 	 * @return Response
 	 */
+	#[NoAdminRequired]
+	#[NoCSRFRequired]
+	#[PublicPage]
 	public function tracking() {
 		$options = [
 			'url' => $this->config->getAppValue('url'),
