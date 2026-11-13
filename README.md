@@ -35,3 +35,8 @@ Track [Nextcloud](https://nextcloud.com) users with [Piwik/Matomo](https://matom
 2. `yarn release:build`
 3. `yarn release:sign`
 4. `yarn release:publish`
+
+## Commercial Support & Custom Integration
+
+Need custom features, enterprise integration, or priority support?
+Maintained by **[Eclipse Technology](https://eclipse-technology.eu)** ([contact@eclipse-technology.eu](mailto:contact@eclipse-technology.eu)).
